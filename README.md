@@ -192,6 +192,7 @@ Sample RAG Trace Analyzer reports:
 
 - [repeated same source](tools/rag_trace_analyzer/sample_reports/repeated_same_source_report.md)
 - [independent sources](tools/rag_trace_analyzer/sample_reports/independent_sources_report.md)
+- [sample report comparison guide](tools/rag_trace_analyzer/sample_reports/README.md)
 
 Run tests:
 
