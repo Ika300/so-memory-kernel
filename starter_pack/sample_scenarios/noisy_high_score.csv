@@ -1,0 +1,6 @@
+﻿query_id,query_text,rank,document_id,chunk_id,retrieved_text,score,answer_used,source_system,notes
+q003,"How should the assistant answer a pricing cancellation question?",1,pricing_page,chunk_003,"Monthly plans can be cancelled at any time from account settings.",0.90,true,example_rag,"direct support"
+q003,"How should the assistant answer a pricing cancellation question?",2,blog_growth,chunk_018,"Pricing strategy should reduce friction during onboarding.",0.82,false,example_rag,"vocabulary overlap, weak support"
+q003,"How should the assistant answer a pricing cancellation question?",3,sales_playbook,chunk_011,"Cancellation objections should be handled with retention offers.",0.79,false,example_rag,"business context, not policy"
+q003,"How should the assistant answer a pricing cancellation question?",4,pricing_page,chunk_004,"Annual contracts may have separate cancellation terms.",0.76,true,example_rag,"direct but narrower condition"
+q003,"How should the assistant answer a pricing cancellation question?",5,support_macro,chunk_007,"Customers asking about billing should be routed to support if account access is needed.",0.69,false,example_rag,"operational but not answer"

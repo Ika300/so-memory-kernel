@@ -1,0 +1,2 @@
+﻿query_id,query_text,rank,document_id,chunk_id,retrieved_text,score
+q001,"Your question here",1,doc_001,chunk_001,"Retrieved text here",0.90

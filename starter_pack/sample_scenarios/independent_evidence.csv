@@ -1,0 +1,5 @@
+﻿query_id,query_text,rank,document_id,chunk_id,retrieved_text,score,answer_used,source_system,notes
+q002,"What sources support the security retention answer?",1,security_policy,chunk_004,"Access logs are retained for 180 days for security review.",0.93,true,example_rag,"independent policy source"
+q002,"What sources support the security retention answer?",2,audit_handbook,chunk_017,"Audit procedures require log availability for at least 180 days.",0.88,true,example_rag,"independent handbook source"
+q002,"What sources support the security retention answer?",3,compliance_faq,chunk_009,"The compliance FAQ states that log retention is normally 180 days.",0.84,true,example_rag,"independent faq source"
+q002,"What sources support the security retention answer?",4,onboarding_guide,chunk_021,"New administrators can view audit logs in the console.",0.64,false,example_rag,"related but not support"

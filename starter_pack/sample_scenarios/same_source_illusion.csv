@@ -1,0 +1,6 @@
+﻿query_id,query_text,rank,document_id,chunk_id,retrieved_text,score,answer_used,source_system,notes
+q001,"Can users request a refund after purchase?",1,refund_policy,chunk_001,"Refunds are available within 30 days when the product has not been used.",0.94,true,example_rag,"primary source"
+q001,"Can users request a refund after purchase?",2,refund_policy,chunk_002,"The return window is 30 days for unused products.",0.91,true,example_rag,"same document repeated"
+q001,"Can users request a refund after purchase?",3,refund_policy,chunk_003,"Used products are not eligible for a standard refund.",0.89,true,example_rag,"same document repeated"
+q001,"Can users request a refund after purchase?",4,shipping_policy,chunk_008,"Shipping delays may qualify for shipping fee reimbursement.",0.66,false,example_rag,"adjacent but not direct"
+q001,"Can users request a refund after purchase?",5,warranty_policy,chunk_012,"Warranty claims apply to defective items after inspection.",0.61,false,example_rag,"different issue"

@@ -30,7 +30,7 @@ Release notes: [CHANGELOG.md](CHANGELOG.md)
 
 ## Free open-source scope
 
-This repository contains the free open-source SDK and basic local tools.
+This repository contains the free open-source SDK, basic local tools, and a practical RAG Trace Analyzer Starter Pack.
 
 Included here:
 
@@ -42,18 +42,16 @@ Included here:
 - basic Local RAG Trace Analyzer
 - minimal sample CSV files
 - public documentation
+- free Local RAG Trace Analyzer Starter Pack under `starter_pack/`
 
 Not included here:
 
-- paid template packs
-- polished report packs
-- industry-specific sample packs
-- non-engineer commercial guides
 - private customer data analysis
 - production integration support
+- legal or compliance auditing
+- hosted SaaS infrastructure
 
-Paid extensions may be developed separately later. They are not part of this
-repository unless explicitly stated.
+Commercial or advanced editions may be developed separately later. They are not part of this repository unless explicitly stated.
 
 ## Why this exists
 
@@ -118,6 +116,23 @@ yet. It reads sanitized RAG trace CSV files, runs locally, and helps distinguish
 repeated exposure from document-level independent evidence.
 
 No external AI API is used by the analyzer.
+
+
+## Free RAG Trace Analyzer Starter Pack
+
+A free starter pack is included under [`starter_pack/`](starter_pack/).
+
+It contains:
+
+- CSV templates for retrieval traces
+- sample RAG trace scenarios
+- report interpretation guide
+- local privacy guide
+- RAG failure pattern guide
+- client-facing report templates
+- delivery checklist
+
+The starter pack is meant to make the basic analyzer easier to try in real workflows. It does not turn the project into a hosted service, audit product, or correctness guarantee.
 
 ## Who this is for
 

@@ -1,0 +1,4 @@
+﻿query_id,query_text,rank,document_id,chunk_id,retrieved_text,score,answer_used,source_system,notes
+q001,"What policy supports refund eligibility?",1,doc_a,chunk_001,"Refunds are available within 30 days when the product is unused.",0.92,true,local_rag,"replace with your own trace"
+q001,"What policy supports refund eligibility?",2,doc_a,chunk_002,"Unused products may be refunded within the stated return window.",0.88,true,local_rag,"same document recurrence"
+q001,"What policy supports refund eligibility?",3,doc_b,chunk_014,"Warranty claims are handled separately from refund requests.",0.71,false,local_rag,"related but not direct support"
