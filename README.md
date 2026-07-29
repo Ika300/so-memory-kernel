@@ -76,6 +76,22 @@ Structural memory signals
 The Kernel does not generate text. It returns structured signals that another
 application, agent, or human can inspect.
 
+## Included local tool
+
+This repository also includes the first product-shaped local tool built on top
+of the SDK:
+
+```text
+tools/rag_trace_analyzer/
+```
+
+Local RAG Trace Analyzer is included here as an example of how SO Memory Kernel
+can become a practical local-first tool. It is not a separate product repository
+yet. It reads sanitized RAG trace CSV files, runs locally, and helps distinguish
+repeated exposure from document-level independent evidence.
+
+No external AI API is used by the analyzer.
+
 ## Who this is for
 
 This project may be useful if you are building:
@@ -113,6 +129,7 @@ This repository currently contains:
 - copied Spiral Orbit Core under `spiral_orbit_core/`
 - public SDK wrapper under `so_memory/`
 - examples under `examples/`
+- first local tool under `tools/rag_trace_analyzer/`
 - tests under `tests/`
 
 The original Spiral Orbit project is not modified.
