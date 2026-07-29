@@ -1,138 +1,134 @@
 # Commercial path
 
-SO Memory Kernel should be positioned as a local structural memory kernel, not a
-natural-language report generator and not an AI analysis service.
+This repository is the free open-source layer.
 
-The commercial path should avoid requiring customer data uploads.
-
-## Core principle
-
-```text
-Open-source Kernel for trust.
-Local toolkits for practical use.
-Template packs for paid distribution.
-No external AI API by default.
-No customer data upload by default.
-```
-
-## Open source layer
-
-Public:
+It contains:
 
 - SO Memory Kernel SDK
-- Local RAG Trace Analyzer basic CLI
+- basic Local RAG Trace Analyzer
 - examples
 - benchmarks
-- documentation
-- sample sanitized traces
+- tests
+- minimal sample CSV files
+- public documentation
+
+It does not contain paid packs or private customer work.
+
+## Boundary
+
+The commercial direction should remain local-first and data-safe.
+
+```text
+GitHub repository = free OSS SDK + basic local tools
+Paid products later = separate template/report packs
+Customer data upload = not required
+External AI API = not used by default
+```
+
+This distinction matters because users may not want customer data, internal RAG
+traces, or proprietary logs sent to AI systems.
+
+SO Memory Kernel can be useful without receiving user data. The user can run the
+tool locally on sanitized structured records.
+
+## Free layer
+
+The free layer should be enough to prove the technical behavior.
+
+Included:
+
+- installable Python SDK
+- small public examples
+- deterministic benchmarks
+- basic RAG Trace Analyzer CLI
+- three minimal sample traces
+- Markdown report generation
+- public docs explaining the boundaries
 
 Purpose:
 
 - trust
 - technical proof
-- developer adoption
+- reproducibility
+- GitHub adoption
 - public demonstration of local structural processing
 
-## First product direction
+## Future paid layer
 
-Recommended first commercial direction:
+Future paid products should be separate from this repository unless explicitly
+released as free.
 
-```text
-Local RAG Trace Analyzer Kit
-```
+Possible paid products:
 
-Why this direction:
+- Starter Template Pack
+- Report Template Pack
+- Industry Trace Template Pack
+- Non-engineer Local Execution Guide
+- Polished HTML Report Themes
+- Additional sanitized scenario packs
 
-- RAG developers already have retrieval traces.
-- Trace data can be sanitized and structured.
-- The tool can run locally.
-- It does not require external AI APIs.
-- SO Memory Kernel's Evidence Identity is directly relevant.
+These paid products should not require the maintainer to receive customer data.
 
-Core question:
+## What should stay free
 
-> Is the RAG system seeing many independent pieces of evidence, or repeatedly
-> seeing the same evidence?
+Keep these free:
 
-## Possible paid layers
+- SDK core API
+- basic CLI analyzer
+- minimal sample traces
+- basic report output
+- tests
+- benchmarks
+- core documentation
 
-### Starter Template Pack
+The free layer must remain useful enough to build trust.
 
-Low-cost package for developers who want better examples and templates.
+## What may become paid later
 
-May include:
+Possible paid additions:
 
-- richer RAG trace CSV templates
-- sample sanitized datasets
+- richer RAG trace schemas
+- more realistic sanitized examples
 - report interpretation guide
-- local execution walkthrough
+- polished report templates
+- non-engineer walkthroughs
 - checklist for repeated exposure vs independent evidence
-- examples for LangChain-like and LlamaIndex-like trace shapes
+- packaging for easy local use
 
-This does not require receiving customer data.
+These should be framed as convenience, education, and packaging, not hidden core
+functionality.
 
-### Report Template Pack
+## What not to sell
 
-Reusable output formats for teams that want to communicate local trace results.
-
-May include:
-
-- Markdown report templates
-- HTML report templates
-- glossary of structural memory terms
-- examples of how to explain Evidence Identity
-- examples of how to explain Return / Re-activation cautiously
-
-### Adapter Recipes
-
-Documentation and small code recipes for converting common structured traces into
-SO Memory Kernel input.
-
-May include:
-
-- RAG trace recipe
-- agent trace recipe
-- workflow event recipe
-- relation-record recipe
-
-These should remain recipes, not promises to handle private production data.
-
-## What not to sell first
-
-Avoid positioning the first product as:
+Avoid selling:
 
 - private data analysis
+- customer data upload
+- external-AI analysis of customer files
 - engineering diagnosis
-- production integration support
-- natural-language understanding
-- automatic text reading
-- summarization
-- generic document analysis
-- RAG accuracy guarantee
-- LLM evaluation service
+- production integration ownership
+- RAG accuracy guarantees
+- LLM evaluation guarantees
+- automatic natural-language understanding
 
-Those promises create too much operational and trust burden.
+Those promises create too much risk and do not match the safest product shape.
 
-## Safe sales message
+## First commercial hypothesis
+
+The first realistic paid product is:
+
+```text
+Local RAG Trace Analyzer Starter Pack
+```
+
+It would build on the free analyzer and add better templates, examples, and
+reading guides.
+
+Core message:
 
 ```text
 Your RAG may not have more evidence.
 It may be seeing the same evidence repeatedly.
 ```
 
-SO Memory Kernel helps inspect this locally using sanitized structured traces.
-
-## Practical first milestone
-
-The first milestone is not revenue at any cost.
-
-The first milestone is:
-
-- a working local RAG Trace Analyzer
-- clear sample traces
-- a clear report
-- a public explanation of the problem
-- no customer data upload
-- no external AI API
-
-After that, paid template packs can be tested.
+The user runs the analysis locally. No customer data upload is required.

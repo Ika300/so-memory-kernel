@@ -1,45 +1,53 @@
 # Local toolkit and product direction
 
-SO Memory Kernel is open source.
+This page describes product direction, not an active paid service catalog.
 
-The commercial direction is not to receive customer data and analyze it with AI.
-The safer direction is:
+The repository currently contains the free open-source SDK and basic local
+tools. Paid packs may be developed separately later, but they are not included
+in this repository unless explicitly stated.
 
-> Help users inspect their own structured memory traces locally.
+## Current free scope
 
-This means:
+Included in this repository:
 
-- no customer data upload by default
-- no external AI API by default
-- no raw document submission required
-- no LLM analysis service
-- local structural processing with SO Memory Kernel
+- SO Memory Kernel SDK
+- basic Local RAG Trace Analyzer
+- minimal sample traces
+- Markdown report generation
+- examples
+- tests
+- benchmarks
+- public docs
+
+The free scope is meant to prove the behavior and make the project usable by
+developers.
 
 ## Product direction
 
-The first commercial product should be a local toolkit, not a consulting-heavy
-service.
-
-Recommended product:
+The safest product direction is local-first:
 
 ```text
-Local RAG Trace Analyzer Kit
+User prepares sanitized structured records.
+User runs the tool locally.
+SO Memory Kernel produces structural signals.
+No external AI API is used by default.
+No customer data upload is required.
 ```
 
-The kit helps users inspect sanitized RAG retrieval traces on their own machine.
+This avoids positioning the project as an AI service that receives private data.
 
-## What the toolkit does
+## What the local toolkit does
 
 - Reads sanitized CSV trace records.
 - Runs SO Memory Kernel locally.
-- Produces Markdown or HTML-style structural reports.
+- Produces structural reports.
 - Separates trace-origin recurrence from document-level recurrence.
 - Shows document concentration.
 - Shows repeated source-relation-target structures.
 - Shows Pattern Identity groups.
 - Shows Return / Re-activation candidates.
 
-## What the toolkit does not do
+## What the local toolkit does not do
 
 - It does not receive customer data.
 - It does not send data to external AI APIs.
@@ -49,98 +57,41 @@ The kit helps users inspect sanitized RAG retrieval traces on their own machine.
 - It does not replace evaluation frameworks.
 - It does not require the maintainer to perform private technical diagnosis.
 
-## Why this is safer
+## Future paid packs
 
-Some users may dislike or prohibit sending data to AI systems.
-
-SO Memory Kernel can avoid that problem because it is not an LLM. A local toolkit
-can run on sanitized structured records such as:
-
-```csv
-trace_id,query_id,document_id,chunk_id,source_label,relation_type,target_label,strength
-t001,q001,doc_a,c001,retrieval,bridge,answer_basis,0.82
-```
-
-The user can prepare or redact this data before running the tool.
-
-## Free layer
-
-The public repository can include:
-
-- SDK
-- basic RAG Trace Analyzer CLI
-- sample CSV files
-- sample Markdown report
-- benchmark cases
-- public documentation
-
-Purpose:
-
-- trust
-- proof of behavior
-- developer adoption
-- public evidence that the Kernel is local and structural
-
-## Starter Pack layer
-
-A future paid Starter Pack could include:
+Future paid products may include:
 
 - richer CSV templates
-- more realistic sanitized RAG trace examples
+- more realistic sanitized sample traces
 - report interpretation guide
-- checklist for repeated evidence vs independent evidence
-- common trace-shape recipes
-- no-data-upload operating guide
-- local execution walkthrough
+- non-engineer local execution guide
+- polished HTML report themes
+- additional scenario packs
 
-The Starter Pack should not require receiving customer data.
+These should be sold separately from the free repository.
 
-## Optional setup boundary
+They should not require users to upload customer data.
 
-If setup help is offered later, it should be limited to:
+## What should not be promised
 
-- installing the local toolkit
-- running sample data
-- explaining the input CSV format
-- explaining how to read the generated report
+Do not promise:
 
-It should not promise:
-
-- private data analysis
+- private customer data analysis
+- production integration support
 - engineering diagnosis
 - RAG quality guarantees
-- integration ownership
-- production support
+- LLM evaluation guarantees
+- automatic document understanding
 
-## Best first market
+## Safe inquiry topics
 
-The best first users are:
+Good public issue topics:
 
-- individual RAG developers
-- small AI builders
-- AI contractors who want local trace inspection
-- internal AI teams that cannot upload data to external AI services
-
-## Core sales message
-
-```text
-Your RAG may not have more evidence.
-It may be seeing the same evidence repeatedly.
-```
-
-SO Memory Kernel helps inspect that difference locally.
-
-## Safe inquiry format
-
-Users should not send private data in public issues.
-
-Useful public questions are about:
-
+- local execution
 - CSV schema
 - sanitized sample shape
-- local execution
 - report interpretation
-- feature requests for the local toolkit
+- feature requests for the free local toolkit
 
 Do not share private credentials, API keys, confidential customer data, or
 proprietary raw logs/documents in a public GitHub issue.

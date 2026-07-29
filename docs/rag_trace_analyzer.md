@@ -151,23 +151,32 @@ Local RAG Trace Analyzer is not:
 
 It is a local structural inspection tool for sanitized RAG trace records.
 
-## Commercial angle
+## Free vs future paid boundary
 
-The safe commercial direction is not to ask users to upload data.
+This repository includes the free basic analyzer.
 
-The stronger direction is:
+Free scope:
+
+- basic CLI
+- minimal sample traces
+- Markdown report output
+- public documentation
+
+Future paid packs may be developed separately later:
+
+- richer CSV templates
+- polished report templates
+- additional sanitized scenario packs
+- non-engineer reading guides
+
+Those future packs are not included in this repository unless explicitly stated.
+
+The safe commercial direction is not to ask users to upload data. The stronger
+direction is:
 
 ```text
 Run this locally on sanitized traces.
 Inspect whether retrieval support is independent or merely repeated.
 ```
-
-Possible paid extensions later:
-
-- richer CSV templates
-- report interpretation guide
-- local execution walkthrough
-- additional sample trace packs
-- HTML report templates
 
 No customer data upload is required for this product direction.

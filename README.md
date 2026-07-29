@@ -28,6 +28,33 @@ Japanese README: [README.ja.md](README.ja.md)
 
 Release notes: [CHANGELOG.md](CHANGELOG.md)
 
+## Free open-source scope
+
+This repository contains the free open-source SDK and basic local tools.
+
+Included here:
+
+- SO Memory Kernel SDK
+- copied Spiral Orbit Core
+- examples
+- tests
+- benchmarks
+- basic Local RAG Trace Analyzer
+- minimal sample CSV files
+- public documentation
+
+Not included here:
+
+- paid template packs
+- polished report packs
+- industry-specific sample packs
+- non-engineer commercial guides
+- private customer data analysis
+- production integration support
+
+Paid extensions may be developed separately later. They are not part of this
+repository unless explicitly stated.
+
 ## Why this exists
 
 Most memory systems answer:
