@@ -1,0 +1,32 @@
+[project]
+name = "so-memory-kernel"
+version = "0.1.0"
+description = "A lightweight structural memory kernel built around the Spiral Orbit Core."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "SO Memory Kernel contributors" }
+]
+keywords = [
+  "memory",
+  "agent-memory",
+  "structural-memory",
+  "reasoning",
+  "knowledge-structure"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "spiral_orbit_core"]
+
+[tool.setuptools.packages.find]
+include = ["so_memory", "spiral_orbit_core"]
