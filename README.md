@@ -1,23 +1,26 @@
 # SO Memory Kernel SDK
 
-SO Memory Kernel is a lightweight structural memory SDK built around the copied
-Spiral Orbit Core.
+A lightweight structural memory kernel for agents, workflows, RAG traces, and
+relation data.
 
-It is not an LLM, vector database, semantic search engine, or summarizer.
+SO Memory Kernel is not an LLM, vector database, semantic search engine, or
+summarizer. It does not try to guess what text “means” from natural language.
+Instead, it accepts structured memory fragments and observes how their relations
+repeat, connect, conflict, leave gaps, and become active again.
 
-It is designed for structured memory fragments, event logs, agent traces,
-workflow states, retrieval traces, and relation data.
+The core idea:
 
-It does not collapse memory into approximate similarity. Instead, it preserves
-structural memory as:
+> Preserve memory as structure, not as approximate similarity.
 
-- recurrence
-- connection
-- tension
-- gaps
-- evidence identity
-- pattern identity
-- return / re-activation
+SO Memory Kernel keeps separate signals that are often collapsed together:
+
+- recurrence: which structures appear again?
+- connection: which fragments bridge otherwise separate areas?
+- tension: which relations conflict or pull against each other?
+- gaps: where does structure imply a missing point?
+- evidence identity: who supplied the evidence?
+- pattern identity: which structural form is repeating?
+- return / re-activation: when does a current structure touch a prior one again?
 
 Japanese README: [README.ja.md](README.ja.md)
 
@@ -32,7 +35,8 @@ SO Memory Kernel asks a different question:
 > Which structures are repeating, connecting, conflicting, leaving gaps, or
 > becoming active again?
 
-This makes it useful as a low-level memory layer for:
+This makes it useful as a low-level memory layer underneath systems that already
+produce structured traces:
 
 - agent memory
 - workflow memory
@@ -40,6 +44,10 @@ This makes it useful as a low-level memory layer for:
 - knowledge graph dynamics
 - long-running reasoning systems
 - structural analysis pipelines
+
+It is deliberately small. The SDK does not replace your application, your LLM,
+your database, or your retrieval layer. It provides a structural memory pass that
+can sit beside them.
 
 ## What it is not
 
@@ -54,6 +62,9 @@ SO Memory Kernel is not:
 
 Natural language parsing is an adapter problem. The Kernel accepts caller-supplied
 structural fragments and relations.
+
+This boundary is intentional. The Kernel should not secretly introduce semantic
+dictionaries, fuzzy merging, or hidden LLM interpretation into the memory core.
 
 ## Current status
 
@@ -71,6 +82,8 @@ The original Spiral Orbit project is not modified.
 Clone the repository, then run:
 
 ```bash
+git clone https://github.com/Ika300/so-memory-kernel.git
+cd so-memory-kernel
 python examples/simple_memory_demo.py
 ```
 
@@ -112,6 +125,8 @@ print(result.return_candidates)
 ```
 
 ## Core concepts
+
+The SDK exposes a small public API around the copied Spiral Orbit Core.
 
 ### MemoryFragment
 
@@ -239,6 +254,10 @@ The SDK must not:
 - infer labels from natural language
 - modify SO formulas, thresholds, Pattern types, or pipeline architecture
 - mix LLM interpretation into the Core
+
+These constraints are part of the product, not temporary limitations. SO Memory
+Kernel is designed to preserve traceable structural difference instead of
+flattening memory into one similarity score.
 
 ## Roadmap
 
