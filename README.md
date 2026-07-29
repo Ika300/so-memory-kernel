@@ -269,6 +269,7 @@ python examples/rag_trace_memory_demo.py
 Use-case docs:
 
 - [Agent / Workflow / RAG trace use cases](docs/use_cases.md)
+- [Local RAG Trace Analyzer](docs/rag_trace_analyzer.md)
 - [Comparison with vector search, RAG, knowledge graphs, and summarization](docs/comparison.md)
 - [Local toolkit and product direction](docs/services.md)
 - [Commercial path](docs/commercial_path.md)

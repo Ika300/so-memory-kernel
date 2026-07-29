@@ -21,3 +21,4 @@ logs/
 benchmark_results/latest.json
 benchmark_results/latest.md
 tools/rag_trace_analyzer/report.md
+tools/rag_trace_analyzer/*_report.md

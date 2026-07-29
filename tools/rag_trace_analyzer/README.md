@@ -14,6 +14,8 @@ Its first purpose is narrow:
 
 > Distinguish repeated exposure from independent source evidence in RAG traces.
 
+See also: [`docs/rag_trace_analyzer.md`](../../docs/rag_trace_analyzer.md)
+
 ## Input CSV
 
 Required columns:

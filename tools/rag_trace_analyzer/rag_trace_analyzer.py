@@ -59,6 +59,10 @@ class RagTraceAnalysis:
         return len(self.document_counts)
 
     @property
+    def trace_origin_evidence_count(self) -> int:
+        return self.total_records
+
+    @property
     def top_document_share(self) -> float:
         if not self.records:
             return 0.0
@@ -200,7 +204,6 @@ def _format_relation_counter(counter: Counter[tuple[str, str, str]], limit: int 
 
 def write_markdown_report(analysis: RagTraceAnalysis, output_path: Path) -> None:
     result = analysis.result
-    evidence = result.evidence_identity
 
     lines: list[str] = [
         "# RAG Trace Structural Report",
@@ -218,15 +221,16 @@ def write_markdown_report(analysis: RagTraceAnalysis, output_path: Path) -> None
         "",
         "## Evidence Identity",
         "",
-        f"- trace-origin independent evidence: {evidence.independent_source_count}",
+        f"- trace-origin independent evidence: {analysis.trace_origin_evidence_count}",
         f"- document-level independent evidence: {analysis.unique_documents}",
-        f"- contextual recurrence: {evidence.contextual_recurrence_count}",
+        f"- SO contextual recurrence: {result.evidence_identity.contextual_recurrence_count}",
         "",
         "Interpretation guide:",
         "",
-        "- trace-origin evidence counts distinct trace records entering SO Memory Kernel.",
+        "- trace-origin evidence counts distinct CSV trace records entering SO Memory Kernel.",
         "- document-level evidence counts distinct `document_id` values in the RAG trace CSV.",
-        "- high contextual recurrence with low document-level evidence may mean the same document is being exposed repeatedly.",
+        "- SO contextual recurrence counts repeated structural exposure observed after the Kernel run.",
+        "- high SO contextual recurrence with low document-level evidence may mean the same document is being exposed repeatedly.",
         "- high document-level evidence means multiple retrieved documents are supporting structure.",
         "",
         "## Document concentration",
