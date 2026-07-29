@@ -262,6 +262,7 @@ Use-case docs:
 
 - [Agent / Workflow / RAG trace use cases](docs/use_cases.md)
 - [Comparison with vector search, RAG, knowledge graphs, and summarization](docs/comparison.md)
+- [Services and consulting](docs/services.md)
 - [Commercial path](docs/commercial_path.md)
 
 Recommended first examples:
