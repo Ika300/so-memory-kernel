@@ -25,3 +25,6 @@ or answer generation.
 5. No Semantic Guessing
 6. Noise Robustness
 7. Traceability
+8. Agent Memory Trace
+9. Workflow Blocker Recurrence
+10. RAG Trace Evidence

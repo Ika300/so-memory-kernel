@@ -4,6 +4,8 @@ SO Memory Kernelは、コピーしたSpiral Orbit Coreを中心にした軽量�
 
 LLMでも、ベクトルDBでも、意味検索エンジンでも、要約器でもありません。
 
+自然言語読解ツールではなく、構造化された記憶断片・イベントログ・エージェント履歴・ワークフロー状態・検索trace・関係データを扱うKernelです。
+
 記憶を近似類似度で潰すのではなく、次のような構造として保持します。
 
 - 反復
@@ -50,6 +52,19 @@ python examples/simple_memory_demo.py
 ```bash
 python -m unittest discover -s tests -p '*test*.py' -v
 ```
+
+用途別example：
+
+```bash
+python examples/agent_memory_demo.py
+python examples/workflow_memory_demo.py
+python examples/rag_trace_memory_demo.py
+```
+
+用途ドキュメント：
+
+- [Use cases](docs/use_cases.md)
+- [Commercial path](docs/commercial_path.md)
 
 ## 最小コード
 
@@ -148,6 +163,9 @@ python benchmarks/run_benchmarks.py
 5. No Semantic Guessing
 6. Noise Robustness
 7. Traceability
+8. Agent Memory Trace
+9. Workflow Blocker Recurrence
+10. RAG Trace Evidence
 
 これはLLM評価ではなく、決定的な構造チェックです。
 

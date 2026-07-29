@@ -4,8 +4,8 @@ These benchmarks are deterministic structural checks. They are not LLM evaluatio
 
 ## Summary
 
-- Total: 7
-- Passed: 7
+- Total: 10
+- Passed: 10
 - Failed: 0
 
 ## evidence_identity
@@ -113,3 +113,48 @@ Observed:
 - `pattern_group_source_fragments_present`: `True`
 - `return_current_fragments_present`: `True`
 - `return_past_fragments_present`: `True`
+
+## agent_memory_trace
+
+Status: **PASS**
+
+Expected:
+- `pattern_identity_group_count`: `>= 1`
+- `return_candidate_count`: `>= 1`
+- `current_fragment_ids`: `['current_action']`
+
+Observed:
+- `pattern_identity_group_count`: `1`
+- `return_candidate_count`: `1`
+- `current_fragment_ids`: `['current_action']`
+- `past_fragment_ids`: `['past_failure', 'past_retry']`
+
+## workflow_blocker_recurrence
+
+Status: **PASS**
+
+Expected:
+- `bridge_group_count`: `1`
+- `independent_source_count`: `3`
+- `return_candidate_count`: `1`
+
+Observed:
+- `bridge_group_count`: `1`
+- `independent_source_count`: `3`
+- `return_candidate_count`: `1`
+
+## rag_trace_evidence
+
+Status: **PASS**
+
+Expected:
+- `independent_source_count`: `4`
+- `contextual_recurrence_count`: `>= 1`
+- `star_group_count`: `>= 1`
+- `return_candidate_count`: `>= 1`
+
+Observed:
+- `independent_source_count`: `4`
+- `contextual_recurrence_count`: `6`
+- `star_group_count`: `1`
+- `return_candidate_count`: `1`

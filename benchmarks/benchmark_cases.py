@@ -318,6 +318,137 @@ def benchmark_traceability(kernel: MemoryKernel) -> BenchmarkCaseResult:
     )
 
 
+def benchmark_agent_memory_trace(kernel: MemoryKernel) -> BenchmarkCaseResult:
+    result = kernel.run(
+        [
+            _bridge_fragment("past_failure", "tool_permission", "missing_approval", strength=0.9),
+            _bridge_fragment("past_retry", "tool_permission", "missing_approval", strength=0.85),
+            _bridge_fragment(
+                "current_action",
+                "tool_permission",
+                "missing_approval",
+                strength=0.8,
+                current=True,
+            ),
+        ]
+    )
+    observations = {
+        "pattern_identity_group_count": len(result.pattern_identity_groups),
+        "return_candidate_count": len(result.return_candidates),
+        "current_fragment_ids": result.return_candidates[0].current_fragment_ids if result.return_candidates else [],
+        "past_fragment_ids": result.return_candidates[0].past_fragment_ids if result.return_candidates else [],
+    }
+    passed = (
+        observations["pattern_identity_group_count"] >= 1
+        and observations["return_candidate_count"] >= 1
+        and observations["current_fragment_ids"] == ["current_action"]
+    )
+    return BenchmarkCaseResult(
+        name="agent_memory_trace",
+        status="PASS" if passed else "FAIL",
+        observations=observations,
+        expected={
+            "pattern_identity_group_count": ">= 1",
+            "return_candidate_count": ">= 1",
+            "current_fragment_ids": ["current_action"],
+        },
+    )
+
+
+def benchmark_workflow_blocker_recurrence(kernel: MemoryKernel) -> BenchmarkCaseResult:
+    result = kernel.run(
+        [
+            _bridge_fragment("past_api_blocker", "blocked_export", "schema_migration", strength=0.9),
+            _bridge_fragment("past_ui_blocker", "blocked_export", "schema_migration", strength=0.85),
+            _bridge_fragment(
+                "current_report_blocker",
+                "blocked_export",
+                "schema_migration",
+                strength=0.8,
+                current=True,
+            ),
+        ]
+    )
+    bridge_groups = [group for group in result.pattern_identity_groups if group.pattern_type == "Bridge"]
+    observations = {
+        "bridge_group_count": len(bridge_groups),
+        "independent_source_count": bridge_groups[0].independent_source_count if bridge_groups else 0,
+        "return_candidate_count": len(result.return_candidates),
+    }
+    passed = (
+        observations["bridge_group_count"] == 1
+        and observations["independent_source_count"] == 3
+        and observations["return_candidate_count"] == 1
+    )
+    return BenchmarkCaseResult(
+        name="workflow_blocker_recurrence",
+        status="PASS" if passed else "FAIL",
+        observations=observations,
+        expected={
+            "bridge_group_count": 1,
+            "independent_source_count": 3,
+            "return_candidate_count": 1,
+        },
+    )
+
+
+def benchmark_rag_trace_evidence(kernel: MemoryKernel) -> BenchmarkCaseResult:
+    def retrieved_claim(fragment_id: str, source_id: str, current: bool = False) -> MemoryFragment:
+        return MemoryFragment(
+            id=fragment_id,
+            content=f"rag_trace: {source_id} supports policy claim",
+            labels=["policy_claim", "evidence_source"],
+            relations=[
+                MemoryRelation(
+                    "policy_claim",
+                    "evidence_source",
+                    relation_type="support",
+                    strength=0.85,
+                    directed=True,
+                )
+            ],
+            memory_type="rag_trace",
+            source_id=source_id,
+            importance=0.85,
+            persistence=0.75,
+            novelty=0.65,
+            metadata={"phase": "current"} if current else {},
+        )
+
+    result = kernel.run(
+        [
+            retrieved_claim("chunk_a", "document_a"),
+            retrieved_claim("chunk_b", "document_b"),
+            retrieved_claim("chunk_c_repeat", "document_a"),
+            retrieved_claim("current_chunk", "document_c", current=True),
+        ]
+    )
+    star_groups = [group for group in result.pattern_identity_groups if group.pattern_type == "Star"]
+    observations = {
+        "independent_source_count": result.evidence_identity.independent_source_count,
+        "contextual_recurrence_count": result.evidence_identity.contextual_recurrence_count,
+        "star_group_count": len(star_groups),
+        "return_candidate_count": len(result.return_candidates),
+    }
+    passed = (
+        observations["independent_source_count"] == 4
+        and observations["contextual_recurrence_count"] >= 1
+        and observations["star_group_count"] >= 1
+        and observations["return_candidate_count"] >= 1
+    )
+    return BenchmarkCaseResult(
+        name="rag_trace_evidence",
+        status="PASS" if passed else "FAIL",
+        observations=observations,
+        expected={
+            "independent_source_count": 4,
+            "contextual_recurrence_count": ">= 1",
+            "star_group_count": ">= 1",
+            "return_candidate_count": ">= 1",
+        },
+    )
+
+
 BENCHMARK_CASES: list[Callable[[MemoryKernel], BenchmarkCaseResult]] = [
     benchmark_evidence_identity,
     benchmark_pattern_identity,
@@ -326,4 +457,7 @@ BENCHMARK_CASES: list[Callable[[MemoryKernel], BenchmarkCaseResult]] = [
     benchmark_no_semantic_guessing,
     benchmark_noise_robustness,
     benchmark_traceability,
+    benchmark_agent_memory_trace,
+    benchmark_workflow_blocker_recurrence,
+    benchmark_rag_trace_evidence,
 ]

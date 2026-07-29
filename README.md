@@ -5,6 +5,9 @@ Spiral Orbit Core.
 
 It is not an LLM, vector database, semantic search engine, or summarizer.
 
+It is designed for structured memory fragments, event logs, agent traces,
+workflow states, retrieval traces, and relation data.
+
 It does not collapse memory into approximate similarity. Instead, it preserves
 structural memory as:
 
@@ -32,9 +35,10 @@ SO Memory Kernel asks a different question:
 This makes it useful as a low-level memory layer for:
 
 - agent memory
-- research tools
+- workflow memory
+- RAG trace memory
+- knowledge graph dynamics
 - long-running reasoning systems
-- project memory
 - structural analysis pipelines
 
 ## What it is not
@@ -186,7 +190,15 @@ past fragments share an exact Pattern Identity group in the same run.
 python examples/simple_memory_demo.py
 python examples/evidence_identity_demo.py
 python examples/reactivation_demo.py
+python examples/agent_memory_demo.py
+python examples/workflow_memory_demo.py
+python examples/rag_trace_memory_demo.py
 ```
+
+Use-case docs:
+
+- [Agent / Workflow / RAG trace use cases](docs/use_cases.md)
+- [Commercial path](docs/commercial_path.md)
 
 ## Benchmarks
 
@@ -210,6 +222,9 @@ Benchmark cases:
 5. No Semantic Guessing
 6. Noise Robustness
 7. Traceability
+8. Agent Memory Trace
+9. Workflow Blocker Recurrence
+10. RAG Trace Evidence
 
 These are deterministic structural checks, not LLM evaluations.
 
