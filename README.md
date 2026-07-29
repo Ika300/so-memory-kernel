@@ -51,6 +51,29 @@ It is deliberately small. The SDK does not replace your application, your LLM,
 your database, or your retrieval layer. It provides a structural memory pass that
 can sit beside them.
 
+## Architecture at a glance
+
+```text
+MemoryFragment / MemoryRelation
+        |
+        v
+SDK adapter
+        |
+        v
+Copied Spiral Orbit Core
+        |
+        v
+Structural memory signals
+        |
+        +-- Evidence Identity
+        +-- Pattern Identity
+        +-- Return / Re-activation
+        +-- Insight JSON
+```
+
+The Kernel does not generate text. It returns structured signals that another
+application, agent, or human can inspect.
+
 ## Who this is for
 
 This project may be useful if you are building:
