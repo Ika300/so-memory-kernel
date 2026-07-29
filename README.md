@@ -26,6 +26,8 @@ SO Memory Kernel keeps separate signals that are often collapsed together:
 
 Japanese README: [README.ja.md](README.ja.md)
 
+Release notes: [CHANGELOG.md](CHANGELOG.md)
+
 ## Why this exists
 
 Most memory systems answer:
