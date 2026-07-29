@@ -102,6 +102,14 @@ cd so-memory-kernel
 python examples/simple_memory_demo.py
 ```
 
+Try the three most useful demos first:
+
+```bash
+python examples/evidence_identity_demo.py
+python examples/reactivation_demo.py
+python examples/rag_trace_memory_demo.py
+```
+
 Run tests:
 
 ```bash
@@ -230,6 +238,15 @@ Use-case docs:
 - [Agent / Workflow / RAG trace use cases](docs/use_cases.md)
 - [Commercial path](docs/commercial_path.md)
 
+Recommended first examples:
+
+- `evidence_identity_demo.py`: shows the difference between one source repeated
+  many times and many independent sources.
+- `reactivation_demo.py`: shows strict structural re-activation without fuzzy
+  semantic matching.
+- `rag_trace_memory_demo.py`: shows how retrieval traces can preserve evidence
+  identity and repeated structural exposure.
+
 ## Benchmarks
 
 Run:
@@ -259,6 +276,14 @@ Benchmark cases:
 These are deterministic structural checks, not LLM evaluations.
 
 Latest checked snapshot: [docs/benchmark_snapshot.md](docs/benchmark_snapshot.md)
+
+The most important benchmark claims are:
+
+- repeated context is not confused with independent evidence
+- exact Pattern Identity is preserved without semantic merging
+- reversed direction does not collapse into the same structure
+- unrelated noise does not create false Return candidates
+- RAG traces can preserve source evidence and contextual recurrence separately
 
 ## Design constraints
 
