@@ -43,6 +43,7 @@ Initial public release.
   - sanitized CSV input
   - local SO Memory Kernel execution
   - Markdown structural report
+  - basic static HTML report
   - sample traces for repeated source, independent sources, and noisy retrieval
 - English and Japanese README files.
 - Public documentation for:

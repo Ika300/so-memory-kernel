@@ -14,6 +14,7 @@ Included in this repository:
 - basic Local RAG Trace Analyzer
 - minimal sample traces
 - Markdown report generation
+- basic static HTML report generation
 - examples
 - tests
 - benchmarks

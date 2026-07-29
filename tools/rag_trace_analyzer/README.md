@@ -52,13 +52,14 @@ From the repository root:
 ```bash
 python tools/rag_trace_analyzer/rag_trace_analyzer.py \
   --input tools/rag_trace_analyzer/sample_traces/repeated_same_source.csv \
-  --output tools/rag_trace_analyzer/report.md
+  --output tools/rag_trace_analyzer/report.md \
+  --html-output tools/rag_trace_analyzer/report.html
 ```
 
 On Windows PowerShell:
 
 ```powershell
-py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_analyzer\sample_traces\repeated_same_source.csv --output tools\rag_trace_analyzer\report.md
+py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_analyzer\sample_traces\repeated_same_source.csv --output tools\rag_trace_analyzer\report.md --html-output tools\rag_trace_analyzer\report.html
 ```
 
 ## Sample traces
@@ -76,6 +77,11 @@ py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_ana
 - Repeated source-relation-target structures
 - Pattern Identity groups
 - Return / Re-activation candidates
+
+The Markdown report is the primary portable output.
+
+The optional HTML report is a basic static preview intended for the free
+open-source demo. Polished report themes may be developed separately later.
 
 ## Boundary
 

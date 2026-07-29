@@ -184,7 +184,8 @@ Try the local RAG trace analyzer:
 ```bash
 python tools/rag_trace_analyzer/rag_trace_analyzer.py \
   --input tools/rag_trace_analyzer/sample_traces/repeated_same_source.csv \
-  --output tools/rag_trace_analyzer/report.md
+  --output tools/rag_trace_analyzer/report.md \
+  --html-output tools/rag_trace_analyzer/report.html
 ```
 
 Run tests:

@@ -40,6 +40,17 @@ class RagTraceAnalyzerTests(unittest.TestCase):
         self.assertIn("trace-origin independent evidence", report)
         self.assertIn("document-level independent evidence", report)
 
+    def test_analyzer_writes_basic_html_report(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            markdown_output = Path(tmpdir) / "report.md"
+            html_output = Path(tmpdir) / "report.html"
+            analyze_csv(SAMPLES / "repeated_same_source.csv", markdown_output, html_output)
+            report = html_output.read_text(encoding="utf-8")
+        self.assertIn("<!doctype html>", report)
+        self.assertIn("RAG Trace Structural Report", report)
+        self.assertIn("No external AI API is used", report)
+        self.assertIn("Document-level evidence", report)
+
     def test_missing_required_column_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             csv_path = Path(tmpdir) / "bad.csv"

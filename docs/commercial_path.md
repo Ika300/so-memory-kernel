@@ -43,6 +43,7 @@ Included:
 - basic RAG Trace Analyzer CLI
 - three minimal sample traces
 - Markdown report generation
+- basic static HTML report generation
 - public docs explaining the boundaries
 
 Purpose:

@@ -129,13 +129,14 @@ From the repository root:
 ```bash
 python tools/rag_trace_analyzer/rag_trace_analyzer.py \
   --input tools/rag_trace_analyzer/sample_traces/repeated_same_source.csv \
-  --output tools/rag_trace_analyzer/report.md
+  --output tools/rag_trace_analyzer/report.md \
+  --html-output tools/rag_trace_analyzer/report.html
 ```
 
 On Windows PowerShell:
 
 ```powershell
-py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_analyzer\sample_traces\repeated_same_source.csv --output tools\rag_trace_analyzer\report.md
+py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_analyzer\sample_traces\repeated_same_source.csv --output tools\rag_trace_analyzer\report.md --html-output tools\rag_trace_analyzer\report.html
 ```
 
 ## Boundary
@@ -160,6 +161,7 @@ Free scope:
 - basic CLI
 - minimal sample traces
 - Markdown report output
+- basic static HTML report output
 - public documentation
 
 Future paid packs may be developed separately later:

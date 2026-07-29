@@ -22,3 +22,5 @@ benchmark_results/latest.json
 benchmark_results/latest.md
 tools/rag_trace_analyzer/report.md
 tools/rag_trace_analyzer/*_report.md
+tools/rag_trace_analyzer/report.html
+tools/rag_trace_analyzer/*_report.html
