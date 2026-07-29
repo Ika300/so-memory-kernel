@@ -1,74 +1,138 @@
 # Commercial path
 
-SO Memory Kernel should be positioned as a developer-facing structural memory
-Kernel, not a natural-language report generator.
+SO Memory Kernel should be positioned as a local structural memory kernel, not a
+natural-language report generator and not an AI analysis service.
+
+The commercial path should avoid requiring customer data uploads.
+
+## Core principle
+
+```text
+Open-source Kernel for trust.
+Local toolkits for practical use.
+Template packs for paid distribution.
+No external AI API by default.
+No customer data upload by default.
+```
 
 ## Open source layer
 
 Public:
 
 - SO Memory Kernel SDK
+- Local RAG Trace Analyzer basic CLI
 - examples
 - benchmarks
 - documentation
+- sample sanitized traces
 
 Purpose:
 
 - trust
 - technical proof
 - developer adoption
-- integration examples
+- public demonstration of local structural processing
 
-## Paid layers
+## First product direction
 
-Possible paid offerings should live above the Kernel.
+Recommended first commercial direction:
 
-### Agent Memory Audit
+```text
+Local RAG Trace Analyzer Kit
+```
 
-Review an AI agent or LLM application's memory design and describe how it could
-represent memory as fragments, relations, evidence identity, Pattern Identity,
-and Return candidates.
+Why this direction:
 
-### Integration Pack
+- RAG developers already have retrieval traces.
+- Trace data can be sanitized and structured.
+- The tool can run locally.
+- It does not require external AI APIs.
+- SO Memory Kernel's Evidence Identity is directly relevant.
 
-Build a small adapter for a customer's structured data:
+Core question:
 
-- agent traces
-- workflow events
-- RAG retrieval traces
-- task dependency logs
-- knowledge graph deltas
+> Is the RAG system seeing many independent pieces of evidence, or repeatedly
+> seeing the same evidence?
 
-Deliverables may include:
+## Possible paid layers
 
-- `MemoryFragment` design
-- `MemoryRelation` design
-- adapter sample
-- benchmark result
-- integration notes
+### Starter Template Pack
 
-### Paid Adapters
+Low-cost package for developers who want better examples and templates.
 
-Adapters may be commercial while the Kernel remains open:
+May include:
 
-- agent trace adapter
-- RAG trace adapter
-- workflow event adapter
-- task graph adapter
-- knowledge graph delta adapter
+- richer RAG trace CSV templates
+- sample sanitized datasets
+- report interpretation guide
+- local execution walkthrough
+- checklist for repeated exposure vs independent evidence
+- examples for LangChain-like and LlamaIndex-like trace shapes
+
+This does not require receiving customer data.
+
+### Report Template Pack
+
+Reusable output formats for teams that want to communicate local trace results.
+
+May include:
+
+- Markdown report templates
+- HTML report templates
+- glossary of structural memory terms
+- examples of how to explain Evidence Identity
+- examples of how to explain Return / Re-activation cautiously
+
+### Adapter Recipes
+
+Documentation and small code recipes for converting common structured traces into
+SO Memory Kernel input.
+
+May include:
+
+- RAG trace recipe
+- agent trace recipe
+- workflow event recipe
+- relation-record recipe
+
+These should remain recipes, not promises to handle private production data.
 
 ## What not to sell first
 
 Avoid positioning the first product as:
 
+- private data analysis
+- engineering diagnosis
+- production integration support
 - natural-language understanding
 - automatic text reading
 - summarization
 - generic document analysis
+- RAG accuracy guarantee
+- LLM evaluation service
 
-Those are adapter/product-layer problems, not Kernel responsibilities.
+Those promises create too much operational and trust burden.
 
-## Core message
+## Safe sales message
 
-SO Memory Kernel adds structural memory to systems that already have structured
-events, relations, or traces.
+```text
+Your RAG may not have more evidence.
+It may be seeing the same evidence repeatedly.
+```
+
+SO Memory Kernel helps inspect this locally using sanitized structured traces.
+
+## Practical first milestone
+
+The first milestone is not revenue at any cost.
+
+The first milestone is:
+
+- a working local RAG Trace Analyzer
+- clear sample traces
+- a clear report
+- a public explanation of the problem
+- no customer data upload
+- no external AI API
+
+After that, paid template packs can be tested.

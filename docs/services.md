@@ -1,188 +1,146 @@
-# Services and consulting
+# Local toolkit and product direction
 
 SO Memory Kernel is open source.
 
-If you are building an agent, RAG system, workflow tool, or knowledge system and
-want structural memory that is more traceable than simple similarity search, the
-project can also be used as the basis for consulting, integration support, and
-architecture review.
+The commercial direction is not to receive customer data and analyze it with AI.
+The safer direction is:
 
-This document describes practical ways SO Memory Kernel can be applied without
-turning it into a natural-language parser, summarizer, or LLM product.
+> Help users inspect their own structured memory traces locally.
 
-## What I can help with
+This means:
 
-- Memory architecture review
-- Agent memory design
-- RAG trace memory audit
-- Workflow memory proof-of-concept
-- Structural event modeling
-- Evidence identity and traceability design
-- SO Memory Kernel integration planning
+- no customer data upload by default
+- no external AI API by default
+- no raw document submission required
+- no LLM analysis service
+- local structural processing with SO Memory Kernel
 
-## Service 1: Memory Architecture Review
+## Product direction
 
-For teams or individuals building systems that already store messages, logs,
-retrieval results, or workflow events.
+The first commercial product should be a local toolkit, not a consulting-heavy
+service.
 
-The review focuses on questions such as:
-
-- What is being remembered?
-- What is being flattened into similarity too early?
-- Is independent source evidence distinguishable from repeated exposure?
-- Are directional relations preserved?
-- Can recurring blockers, bridges, tensions, or re-activated patterns be traced?
-- Can outputs be audited back to source fragments?
-
-Possible deliverables:
-
-- architecture notes
-- memory risk map
-- recommended structural input model
-- small integration sketch
-- benchmark suggestions
-
-## Service 2: RAG Trace Memory Audit
-
-For RAG systems that already retrieve documents or chunks.
-
-The goal is not to replace retrieval. The goal is to inspect the structure of
-retrieval history.
-
-Useful questions:
-
-- Is the same source being seen many times?
-- Are many independent sources supporting the same structure?
-- Do certain query-result patterns keep returning?
-- Are important sources acting as bridges between topics?
-- Are retrieval traces creating repeated but shallow evidence?
-
-Possible deliverables:
-
-- RAG trace schema proposal
-- SO Memory Kernel input adapter plan
-- evidence identity report
-- recurrence and re-activation report
-- benchmark fixture for future regression checks
-
-## Service 3: Agent Memory Integration
-
-For agent systems that need more than chat history or vector recall.
-
-SO Memory Kernel can help represent:
-
-- past failed actions
-- repeated tool-call patterns
-- recurring blockers
-- exact structural returns
-- repeated bridges across task traces
-- difference between one repeated observation and many independent observations
-
-Possible deliverables:
-
-- agent trace memory model
-- adapter from agent events to `MemoryFragment`
-- proof-of-concept integration
-- test fixtures for memory behavior
-
-## Service 4: Workflow Memory PoC
-
-For project management, operations, and internal workflow systems.
-
-The goal is to observe structure in events such as:
-
-- tasks
-- blockers
-- handoffs
-- repeated delays
-- dependencies
-- recurring failure modes
-- re-activated issues
-
-Possible deliverables:
-
-- workflow event schema
-- small dataset conversion
-- SO Memory Kernel run
-- structural memory report
-- next-step integration notes
-
-## What this is good for
-
-SO Memory Kernel is strongest when input already has some structure:
-
-- event logs
-- agent traces
-- RAG retrieval traces
-- workflow records
-- relation data
-- knowledge graph edges
-- manually curated memory fragments
-
-It is especially useful when the system needs to preserve:
-
-- evidence identity
-- source traceability
-- exact structural recurrence
-- direction
-- re-activation
-- difference between repeated context and independent evidence
-
-## What this is not good for
-
-SO Memory Kernel is not the right tool if the expected service is:
-
-- automatic natural-language understanding from raw documents
-- generic document summarization
-- embedding search
-- semantic similarity ranking
-- chatbot personality design
-- answer generation
-- a drop-in replacement for an LLM or vector database
-
-Natural language, LLM interpretation, embeddings, and domain-specific meaning can
-be handled outside the Kernel by adapters or applications. The Kernel itself
-should remain strict and structurally conservative.
-
-## Typical first engagement
-
-A practical first engagement should be small.
-
-Example:
-
-1. Choose one real memory source:
-   - agent trace
-   - RAG trace
-   - workflow log
-   - relation dataset
-2. Convert 20-100 records into `MemoryFragment` and `MemoryRelation`.
-3. Run SO Memory Kernel.
-4. Inspect:
-   - evidence identity
-   - pattern identity
-   - return / re-activation candidates
-   - traceability
-5. Decide whether a larger integration is worth building.
-
-The first goal is not automation. The first goal is to see whether structural
-memory reveals something the existing system cannot see clearly.
-
-## Contact
-
-This repository is currently maintained by Ika300.
-
-For now, use GitHub issues or repository discussions when available.
-
-Suggested inquiry format:
+Recommended product:
 
 ```text
-Project type:
-Data type:
-Current memory/retrieval system:
-Problem you want to understand:
-Example records available:
-Desired output:
+Local RAG Trace Analyzer Kit
 ```
 
-Do not share private credentials, API keys, or confidential customer data in a
-public GitHub issue.
+The kit helps users inspect sanitized RAG retrieval traces on their own machine.
+
+## What the toolkit does
+
+- Reads sanitized CSV trace records.
+- Runs SO Memory Kernel locally.
+- Produces Markdown or HTML-style structural reports.
+- Separates trace-origin recurrence from document-level recurrence.
+- Shows document concentration.
+- Shows repeated source-relation-target structures.
+- Shows Pattern Identity groups.
+- Shows Return / Re-activation candidates.
+
+## What the toolkit does not do
+
+- It does not receive customer data.
+- It does not send data to external AI APIs.
+- It does not require raw documents.
+- It does not perform natural-language understanding.
+- It does not guarantee RAG answer quality.
+- It does not replace evaluation frameworks.
+- It does not require the maintainer to perform private technical diagnosis.
+
+## Why this is safer
+
+Some users may dislike or prohibit sending data to AI systems.
+
+SO Memory Kernel can avoid that problem because it is not an LLM. A local toolkit
+can run on sanitized structured records such as:
+
+```csv
+trace_id,query_id,document_id,chunk_id,source_label,relation_type,target_label,strength
+t001,q001,doc_a,c001,retrieval,bridge,answer_basis,0.82
+```
+
+The user can prepare or redact this data before running the tool.
+
+## Free layer
+
+The public repository can include:
+
+- SDK
+- basic RAG Trace Analyzer CLI
+- sample CSV files
+- sample Markdown report
+- benchmark cases
+- public documentation
+
+Purpose:
+
+- trust
+- proof of behavior
+- developer adoption
+- public evidence that the Kernel is local and structural
+
+## Starter Pack layer
+
+A future paid Starter Pack could include:
+
+- richer CSV templates
+- more realistic sanitized RAG trace examples
+- report interpretation guide
+- checklist for repeated evidence vs independent evidence
+- common trace-shape recipes
+- no-data-upload operating guide
+- local execution walkthrough
+
+The Starter Pack should not require receiving customer data.
+
+## Optional setup boundary
+
+If setup help is offered later, it should be limited to:
+
+- installing the local toolkit
+- running sample data
+- explaining the input CSV format
+- explaining how to read the generated report
+
+It should not promise:
+
+- private data analysis
+- engineering diagnosis
+- RAG quality guarantees
+- integration ownership
+- production support
+
+## Best first market
+
+The best first users are:
+
+- individual RAG developers
+- small AI builders
+- AI contractors who want local trace inspection
+- internal AI teams that cannot upload data to external AI services
+
+## Core sales message
+
+```text
+Your RAG may not have more evidence.
+It may be seeing the same evidence repeatedly.
+```
+
+SO Memory Kernel helps inspect that difference locally.
+
+## Safe inquiry format
+
+Users should not send private data in public issues.
+
+Useful public questions are about:
+
+- CSV schema
+- sanitized sample shape
+- local execution
+- report interpretation
+- feature requests for the local toolkit
+
+Do not share private credentials, API keys, confidential customer data, or
+proprietary raw logs/documents in a public GitHub issue.

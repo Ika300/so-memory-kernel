@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Services and consulting guide
+  - name: Local toolkit and product direction
     url: https://github.com/Ika300/so-memory-kernel/blob/main/docs/services.md
-    about: Read this first if you are considering a memory architecture review, RAG trace audit, or integration support.
+    about: Read this first if you want to use SO Memory Kernel locally without uploading data.

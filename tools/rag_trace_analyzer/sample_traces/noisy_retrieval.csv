@@ -1,0 +1,7 @@
+trace_id,query_id,document_id,chunk_id,source_label,relation_type,target_label,strength,rank,score,phase
+t201,q201,doc_policy_a,c001,retrieval,bridge,answer_basis,0.82,1,0.91,past
+t202,q202,doc_policy_b,c001,retrieval,bridge,answer_basis,0.81,1,0.90,current
+t203,q203,doc_weather,c001,weather,association,forecast,0.45,3,0.61,past
+t204,q204,doc_menu,c001,lunch,association,menu,0.42,5,0.55,past
+t205,q205,doc_sports,c001,sports,association,scoreboard,0.40,4,0.54,past
+t206,q206,doc_travel,c001,travel,association,hotel,0.43,2,0.58,past

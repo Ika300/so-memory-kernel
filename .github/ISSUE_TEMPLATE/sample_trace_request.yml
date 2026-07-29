@@ -1,0 +1,45 @@
+name: Sample Trace / Template Request
+description: Request a sanitized sample CSV shape or template for local structural inspection.
+title: "[Sample Trace]: "
+labels: ["sample-trace"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a sample trace shape or template.
+
+        This project should not require uploading customer data. Please describe the kind of trace you have without sharing private records.
+
+  - type: input
+    id: use_case
+    attributes:
+      label: Use case
+      placeholder: RAG trace, agent trace, workflow event log, relation records, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: available_fields
+    attributes:
+      label: Available fields
+      description: List field names only. Do not include real private values.
+      placeholder: query_id, document_id, chunk_id, retrieval_score, rank, source_type...
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_report
+    attributes:
+      label: Desired report
+      description: What would you like the local report to show?
+      placeholder: document concentration, repeated evidence, independent document evidence, return candidates...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included private credentials, API keys, confidential customer data, proprietary raw logs, or raw documents.
+          required: true

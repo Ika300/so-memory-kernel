@@ -1,0 +1,5 @@
+trace_id,query_id,document_id,chunk_id,source_label,relation_type,target_label,strength,rank,score,phase
+t001,q001,doc_policy_a,c001,retrieval,bridge,answer_basis,0.82,1,0.91,past
+t002,q002,doc_policy_a,c002,retrieval,bridge,answer_basis,0.81,1,0.90,past
+t003,q003,doc_policy_a,c003,retrieval,bridge,answer_basis,0.80,1,0.89,past
+t004,q004,doc_policy_a,c004,retrieval,bridge,answer_basis,0.83,1,0.92,current

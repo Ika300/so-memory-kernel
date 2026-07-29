@@ -1,0 +1,45 @@
+name: Local Toolkit Question
+description: Ask about running SO Memory Kernel tools locally without uploading data.
+title: "[Local Toolkit]: "
+labels: ["local-toolkit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for questions about local execution, sanitized CSV input, sample traces, or report interpretation.
+
+        Do not share private credentials, API keys, confidential customer data, proprietary raw logs, or raw documents in a public issue.
+
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: RAG Trace Analyzer, SO Memory Kernel SDK, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What do you want to understand?
+      placeholder: How should I format my sanitized CSV? What does document-level evidence mean?
+    validations:
+      required: true
+
+  - type: textarea
+    id: sanitized_shape
+    attributes:
+      label: Sanitized data shape
+      description: Optional. Describe columns and structure only. Do not include private data.
+      placeholder: trace_id, query_id, document_id, chunk_id, source_label, relation_type, target_label, strength
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included private credentials, API keys, confidential customer data, proprietary raw logs, or raw documents.
+          required: true

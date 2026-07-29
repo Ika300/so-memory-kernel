@@ -39,6 +39,11 @@ Initial public release.
   - agent memory traces
   - workflow blocker recurrence
   - RAG trace evidence
+- Local RAG Trace Analyzer v0.1:
+  - sanitized CSV input
+  - local SO Memory Kernel execution
+  - Markdown structural report
+  - sample traces for repeated source, independent sources, and noisy retrieval
 - English and Japanese README files.
 - Public documentation for:
   - memory model

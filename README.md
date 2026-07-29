@@ -135,6 +135,14 @@ python examples/reactivation_demo.py
 python examples/rag_trace_memory_demo.py
 ```
 
+Try the local RAG trace analyzer:
+
+```bash
+python tools/rag_trace_analyzer/rag_trace_analyzer.py \
+  --input tools/rag_trace_analyzer/sample_traces/repeated_same_source.csv \
+  --output tools/rag_trace_analyzer/report.md
+```
+
 Run tests:
 
 ```bash
@@ -262,7 +270,7 @@ Use-case docs:
 
 - [Agent / Workflow / RAG trace use cases](docs/use_cases.md)
 - [Comparison with vector search, RAG, knowledge graphs, and summarization](docs/comparison.md)
-- [Services and consulting](docs/services.md)
+- [Local toolkit and product direction](docs/services.md)
 - [Commercial path](docs/commercial_path.md)
 
 Recommended first examples:
