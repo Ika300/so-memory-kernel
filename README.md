@@ -1,10 +1,12 @@
 # SO Memory Kernel SDK
 
+[![tests](https://github.com/Ika300/so-memory-kernel/actions/workflows/tests.yml/badge.svg)](https://github.com/Ika300/so-memory-kernel/actions/workflows/tests.yml)
+
 A lightweight structural memory kernel for agents, workflows, RAG traces, and
 relation data.
 
 SO Memory Kernel is not an LLM, vector database, semantic search engine, or
-summarizer. It does not try to guess what text “means” from natural language.
+summarizer. It does not try to guess what text "means" from natural language.
 Instead, it accepts structured memory fragments and observes how their relations
 repeat, connect, conflict, leave gaps, and become active again.
 
@@ -48,6 +50,19 @@ produce structured traces:
 It is deliberately small. The SDK does not replace your application, your LLM,
 your database, or your retrieval layer. It provides a structural memory pass that
 can sit beside them.
+
+## Who this is for
+
+This project may be useful if you are building:
+
+- an agent that needs traceable memory beyond chat history
+- a RAG system that needs structural trace memory, not only document retrieval
+- a workflow tool that needs to notice recurring blockers and re-activated tasks
+- a knowledge system that wants exact structural recurrence without fuzzy merging
+- an experimental cognitive or memory architecture
+
+It is probably not the right tool if you need plug-and-play natural language
+understanding, embeddings, vector search, or automatic summarization.
 
 ## What it is not
 
