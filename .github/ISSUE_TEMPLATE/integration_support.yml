@@ -1,0 +1,56 @@
+name: Integration Support
+description: Ask about integrating SO Memory Kernel into an existing structured-memory workflow.
+title: "[Integration]: "
+labels: ["integration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you want to integrate SO Memory Kernel with an existing system.
+
+        The best first integration is small: 20-100 structured records, one clear memory question, and a traceable output expectation.
+
+        Do not share private credentials, API keys, confidential customer data, or proprietary raw logs in a public issue.
+
+  - type: input
+    id: system_type
+    attributes:
+      label: System type
+      placeholder: Agent, RAG, workflow, knowledge graph, log pipeline, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: input_records
+    attributes:
+      label: Input records
+      description: What records would become MemoryFragment / MemoryRelation inputs?
+      placeholder: agent events, workflow blockers, retrieval traces, graph edges...
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_signals
+    attributes:
+      label: Desired structural signals
+      description: Which SO Memory Kernel outputs are you most interested in?
+      placeholder: Evidence Identity, Pattern Identity, Return / Re-activation, traceability...
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Any technical, privacy, runtime, or deployment constraints?
+      placeholder: local-only, no LLM calls, private data, small dataset, Python-only...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included private credentials, API keys, confidential customer data, or proprietary raw logs.
+          required: true

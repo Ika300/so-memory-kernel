@@ -1,0 +1,64 @@
+name: Memory Architecture Review
+description: Request a review of an agent, RAG, workflow, or knowledge-system memory architecture.
+title: "[Memory Review]: "
+labels: ["memory-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a memory architecture review.
+
+        Do not share private credentials, API keys, confidential customer data, or proprietary raw logs in a public issue.
+
+  - type: input
+    id: project_type
+    attributes:
+      label: Project type
+      description: What are you building?
+      placeholder: Agent system, RAG system, workflow tool, knowledge graph, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_memory_system
+    attributes:
+      label: Current memory / retrieval system
+      description: Describe what your system currently stores or retrieves.
+      placeholder: We store chat history, tool calls, retrieved chunks, workflow events...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem you want to understand
+      description: What is hard to see with your current memory design?
+      placeholder: We cannot distinguish repeated exposure from independent evidence...
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_shape
+    attributes:
+      label: Data shape
+      description: Describe the structure of your data without exposing confidential content.
+      placeholder: event_id, source_id, relation_type, source_label, target_label, timestamp...
+    validations:
+      required: false
+
+  - type: textarea
+    id: desired_output
+    attributes:
+      label: Desired output
+      description: What would a useful review or PoC produce?
+      placeholder: Memory risk map, adapter sketch, benchmark fixture, traceability report...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included private credentials, API keys, confidential customer data, or proprietary raw logs.
+          required: true
