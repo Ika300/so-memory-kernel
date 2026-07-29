@@ -68,6 +68,24 @@ py -3 tools\rag_trace_analyzer\rag_trace_analyzer.py --input tools\rag_trace_ana
 - `independent_sources.csv`: multiple documents provide the same structure.
 - `noisy_retrieval.csv`: signal records mixed with unrelated retrieval noise.
 
+## Sample reports
+
+Public sample outputs are included under:
+
+```text
+tools/rag_trace_analyzer/sample_reports/
+```
+
+Recommended first comparison:
+
+- `repeated_same_source_report.html`
+- `independent_sources_report.html`
+
+The important contrast is document-level evidence:
+
+- repeated same source: several trace records, one document
+- independent sources: several trace records, several documents
+
 ## Report sections
 
 - Input summary

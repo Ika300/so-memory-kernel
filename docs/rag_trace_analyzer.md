@@ -93,6 +93,11 @@ Expected reading:
 - top document share is 1.00
 - this may indicate repeated exposure, not independent document support
 
+Sample output:
+
+- [`repeated_same_source_report.md`](../tools/rag_trace_analyzer/sample_reports/repeated_same_source_report.md)
+- [`repeated_same_source_report.html`](../tools/rag_trace_analyzer/sample_reports/repeated_same_source_report.html)
+
 ### Case B: independent sources
 
 Input:
@@ -108,6 +113,11 @@ Expected reading:
 - document-level evidence is also high
 - top document share is low
 - this is closer to independent document support
+
+Sample output:
+
+- [`independent_sources_report.md`](../tools/rag_trace_analyzer/sample_reports/independent_sources_report.md)
+- [`independent_sources_report.html`](../tools/rag_trace_analyzer/sample_reports/independent_sources_report.html)
 
 ### Case C: noisy retrieval
 

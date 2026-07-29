@@ -188,6 +188,11 @@ python tools/rag_trace_analyzer/rag_trace_analyzer.py \
   --html-output tools/rag_trace_analyzer/report.html
 ```
 
+Sample RAG Trace Analyzer reports:
+
+- [repeated same source](tools/rag_trace_analyzer/sample_reports/repeated_same_source_report.md)
+- [independent sources](tools/rag_trace_analyzer/sample_reports/independent_sources_report.md)
+
 Run tests:
 
 ```bash
